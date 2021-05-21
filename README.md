@@ -11,6 +11,7 @@
 ```shell
 dtc -I dts -O dtb -o rocket.dtb zcu102.dts
 gcc 4-core-reset.c -o 4-core-reset
+chmod +x smp_run.sh
 ./smp_run.sh
 ```
 
@@ -21,5 +22,6 @@ gcc 4-core-reset.c -o 4-core-reset
 ```shell
 dtc -I dts -O dtb -o rocket.dtb zcu102.dts
 gcc 4-core-reset-ucore.c -o 4-core-reset-ucore
+chmod +x smp_run_ucore.sh
 ./smp_run_ucore.sh
 ```
