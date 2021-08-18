@@ -25,3 +25,16 @@ gcc 4-core-reset-ucore.c -o 4-core-reset-ucore
 chmod +x smp_run_ucore.sh
 ./smp_run_ucore.sh
 ```
+
+### Labeled RISC-V Rust Bootloader + rCore-N
+
+将 lrv-rust-bl.bin 和 rcore-n.bin 放在同一目录下，执行
+
+```shell
+dtc -I dts -O dtb -o rocket.dtb zcu102.dts
+gcc 4-core-reset-ucore.c -o 4-core-reset-ucore
+chmod +x smp_run_rcore.sh
+./smp_run_rcore.sh
+```
+
+start_tmux.sh 可以便捷地启动多个串口，建议执行该脚本后，在 tmux 终端中运行 smp_run_rcore.sh 。
